@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+:root[color-mode="dark"] {
+  background-color: #000;
+  color: #fff;
+}
 html {
   box-sizing: border-box;
 }
