@@ -84,11 +84,37 @@ body * {
   width: 100%;
 }
 
-/* dark mode 처리
-@media (prefers-color-scheme: dark) {
+/* 유저가 사용하는 디바이스의 가로 길이에 따라 검색결과의 row 당 column 갯수를 적절히 변경해주어야 합니다.
+    * 992px 이하: 3개
+    * 768px 이하: 2개
+    * 576px 이하: 1개
+ */
+
+@media screen and (max-width: 992px) {
+  .SearchResult {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+  }
+}
+@media screen and (max-width: 768px) {
+  .SearchResult {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+  .ImageInfo .content-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .SearchResult {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+}
+
+/* dark mode 처리 
+기본적으로는 OS의 다크모드의 활성화 여부를 기반으로 동작하게 하되, 유저가 테마를 토글링 할 수 있도록 좌측 상단에 해당 기능을 토글하는 체크박스를 만듭니다.
+*/
+/* @media (prefers-color-scheme: dark) {
   body {
     background-color: #000;
     color: white;
   }
-}
-*?
+} */
