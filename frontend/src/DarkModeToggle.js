@@ -1,8 +1,6 @@
-// const TEMPLATE = '<input type="text">';
-
-isDarkMode = null;
-
 class DarkModeToggle {
+  isDarkMode = null;
+
   constructor({ $target }) {
     const $DarkModeToggle = document.createElement("input");
     this.$DarkModeToggle = $DarkModeToggle;
